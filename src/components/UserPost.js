@@ -4,6 +4,8 @@ import UserComments from "./UserComments";
 
 function UserPost({ title, body, id }) {
 
+ 
+
   return (
     <div >
         <Accordion>
@@ -17,7 +19,11 @@ function UserPost({ title, body, id }) {
             </Accordion.Header>
             <Accordion.Body>
               
-                <UserComments/>
+                <UserComments
+                 key={id}
+                  id={id} 
+                
+                />
             
             </Accordion.Body>
           </Accordion.Item>

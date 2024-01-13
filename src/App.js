@@ -53,6 +53,7 @@ function App() {
          {userPost.map(function (data) {
            return (
              <UserPost
+              key={data.id}
                 id={data.id}
                 title={data.title} 
                 body={data.body} 
