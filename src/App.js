@@ -1,4 +1,5 @@
 import { useState } from "react";
+import UserPost from "./components/UserPost";
 import "./App.css";
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
+
     const dataPost = await response.json();
     
     setUserPost(dataPost);  
@@ -47,6 +48,12 @@ function App() {
           />
           <input type="submit" />
         </form>
+
+         {userPost.map(function (data) {
+              return (
+                <UserPost/>
+              );
+            })}
       </div>
     </div>
   );
