@@ -2,12 +2,36 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  
   const [userNum, setUserNum] = useState(1);
+  const [userPost, setUserPost] = useState([]);
 
+  
+  // function to handle the form and start the fetch
   const handleSubmit = (event) => {
-    event.preventDefault();
-    
+    event.preventDefault(); 
+    getPosts();
   };
+
+
+  // function to fetch the user Posts data
+  async function getPosts() {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/users/${userNum}/posts`,
+      { method: "GET" }
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const dataPost = await response.json();
+    
+    setUserPost(dataPost);  
+    console.log(userPost); 
+  }
+
+
+
 
   return (
     <div className="App">
