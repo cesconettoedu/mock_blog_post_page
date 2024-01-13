@@ -8,7 +8,7 @@ function App() {
   const [userPost, setUserPost] = useState([]);
 
   
-  // function to handle the form and start the fetch
+  // function to handle the form and call getPost to fetch the data
   const handleSubmit = (event) => {
     event.preventDefault(); 
     getPosts();
