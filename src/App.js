@@ -27,7 +27,7 @@ function App() {
 
     const dataPost = await response.json();
 
-     if (userNum > dataPost) {
+    if (userNum > dataPost) {
       alert(`User number ${userNum} is not on the list. `)
     }
     
@@ -44,26 +44,28 @@ function App() {
         <h2>User Posts List</h2>
         
         <form onSubmit={handleSubmit}>
-          <label >Enter user number :  </label>
-          <input
-            type="text"
+          <label >Enter user number :</label>
+          <div className="mb-3">
+          <input 
+            type="number" 
+            className="col-1 ps-2"  
             value={userNum}
-            onChange={(e) => setUserNum(e.target.value)}
-          />
-          <input type="submit" />
+            onChange={(e) => setUserNum(e.target.value)}/>
+          </div>
+          <button type="submit" className="btn btn-primary">Submit</button>
         </form>
         
-        <div>
+        <div className="mt-3">
          {userPost.map(function (data) {
            return (
-             <UserPost
-              key={data.id}
+              <UserPost
+                key={data.id}
                 id={data.id}
                 title={data.title} 
                 body={data.body} 
-             />
-             );
-            })}
+              />
+            );
+          })}
         </div>
       
       </div>
