@@ -53,8 +53,9 @@ function App() {
          {userPost.map(function (data) {
            return (
              <UserPost
-             title={data.title} 
-             body={data.body} 
+                id={data.id}
+                title={data.title} 
+                body={data.body} 
              />
              );
             })}
