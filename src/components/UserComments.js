@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function UserComments({id}) {
+function UserComments({id, get }) {
 
   
   const [userCommAll, setUserCommAll] = useState([]);
@@ -25,9 +25,11 @@ function UserComments({id}) {
   }
 
     useEffect(() => {
-      getComm();
+       if(get == true) {
+        getComm(id)
+      }
 
-    }, []);
+    }, [get]);
 
   
 
