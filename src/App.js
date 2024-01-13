@@ -26,6 +26,10 @@ function App() {
     }
 
     const dataPost = await response.json();
+
+     if (userNum > dataPost) {
+      alert(`User number ${userNum} is not on the list. `)
+    }
     
     setUserPost(dataPost);  
   
