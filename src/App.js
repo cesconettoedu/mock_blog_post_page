@@ -28,7 +28,7 @@ function App() {
     const dataPost = await response.json();
     
     setUserPost(dataPost);  
-    console.log(userPost); 
+  
   }
 
 
@@ -48,12 +48,18 @@ function App() {
           />
           <input type="submit" />
         </form>
-
+        
+        <div>
          {userPost.map(function (data) {
-              return (
-                <UserPost/>
-              );
+           return (
+             <UserPost
+             title={data.title} 
+             body={data.body} 
+             />
+             );
             })}
+        </div>
+      
       </div>
     </div>
   );
