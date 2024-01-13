@@ -9,7 +9,7 @@ function UserComments({id}) {
 
   async function getComm() {
     let commentId = id
-    console.log(commentId);
+
     const response = await fetch(
       `https://jsonplaceholder.typicode.com/posts/${commentId}/comments`,
       { method: "GET" }
@@ -34,11 +34,19 @@ function UserComments({id}) {
 
   return (
     <div>
-      <label>EMAIL: User Email</label>
-      <br></br>
-      <label>NAME: User Name</label>
-      <br></br>
-      <label>BODY: User Bady</label>
+      {userCommAll.map((comment) => {
+          console.log(comment);
+          return (
+            <div key={comment.id}>
+              <label>EMAIL: {comment.email}</label>
+              <br></br>
+              <label>NAME: {comment.name}</label>
+              <br></br>
+              <label>BODY: {comment.body}</label>
+              <p>-----------------------------------------------------------</p>
+            </div>
+          );
+        })}
     </div>
   );
 }
