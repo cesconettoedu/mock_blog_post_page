@@ -45,17 +45,18 @@ function App() {
         
         <form onSubmit={handleSubmit}>
           <label >Enter user number :</label>
-          <div className="mb-3">
+          <div className="m-3">
           <input 
             type="number" 
-            className="col-1 ps-2"  
+            className="col-1 ps-3 input"  
             value={userNum}
-            onChange={(e) => setUserNum(e.target.value)}/>
+            onChange={(e) => setUserNum(e.target.value)}
+          />
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
         
-        <div className="mt-3">
+        <div className="mt-2">
          {userPost.map(function (data) {
            return (
               <UserPost

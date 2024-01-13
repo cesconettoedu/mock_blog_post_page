@@ -27,18 +27,18 @@ function UserComments({ id, fetchComments }) {
     }
   }, [fetchComments]);
 
-  
+
   return (
     <div>
       {userCommAll.map((comment) => {
         console.log(comment);
         return (
           <div key={comment.id}>
-            <label>EMAIL: {comment.email}</label>
+            <label>Name: {comment.name}</label>
             <br></br>
-            <label>NAME: {comment.name}</label>
+            <label>Email: {comment.email}</label>
             <br></br>
-            <label>BODY: {comment.body}</label>
+            <label>Comment: {comment.body}</label>
             <p>-----------------------------------------------------------</p>
           </div>
         );
