@@ -60,11 +60,11 @@ function App() {
         <div className="mt-2">
          {userPost.map(function (data, idx) {
             
-           let postnumber = (idx+1)
+           let postNumber = (idx+1)
            return (
             
               <UserPost
-                postnumber={postnumber}
+                postNumber={postNumber}
                 key={data.id}
                 id={data.id}
                 title={data.title} 

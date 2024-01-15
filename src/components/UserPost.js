@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import UserComments from "./UserComments";
+import './UserPost.css'
 
-function UserPost({ title, body, id, postnumber }) {
+function UserPost({ title, body, id, postNumber }) {
 
   const [userShow, setUserShow] = useState(false);
 
@@ -11,16 +12,11 @@ function UserPost({ title, body, id, postnumber }) {
       <Accordion >
         
         <Accordion.Item eventKey={id} className="border-0">
-          <Accordion.Header>
-            {/* <div style={{ background: "lightgreen" }}>
-              <label>TITLE: {title}</label>
-              <br></br>
-              <label>BODY: {body}</label>
-            </div> */}
-
-
+          <Accordion.Header > 
             <div className="container ">
-              <h4>Post {postnumber}</h4>
+              <p className="col-12">
+                Post {postNumber} - Click to open the comments
+              </p>
               <div className="row justify-content-center">
                   <div className="col-md-12">
                       <div className="card">
