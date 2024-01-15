@@ -31,7 +31,7 @@ function UserComments({ id, fetchComments }) {
   return (
     <div>
       {userCommAll.map((comment) => {
-        console.log(comment);
+        
         return (
           <div key={comment.id}>
             <label>Name: {comment.name}</label>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import UserComments from "./UserComments";
 
-function UserPost({ title, body, id }) {
+function UserPost({ title, body, id, postnumber }) {
 
   const [userShow, setUserShow] = useState(false);
 
@@ -20,6 +20,7 @@ function UserPost({ title, body, id }) {
 
 
             <div className="container ">
+              <h4>Post {postnumber}</h4>
               <div className="row justify-content-center">
                   <div className="col-md-12">
                       <div className="card">

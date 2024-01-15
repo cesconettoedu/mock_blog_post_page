@@ -48,6 +48,7 @@ function App() {
           <div className="m-3">
           <input 
             type="number" 
+            min="1"
             className="col-1 ps-3 input"  
             value={userNum}
             onChange={(e) => setUserNum(e.target.value)}
@@ -57,9 +58,13 @@ function App() {
         </form>
         
         <div className="mt-2">
-         {userPost.map(function (data) {
+         {userPost.map(function (data, idx) {
+            
+           let postnumber = (idx+1)
            return (
+            
               <UserPost
+                postnumber={postnumber}
                 key={data.id}
                 id={data.id}
                 title={data.title} 
