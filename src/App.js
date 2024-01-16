@@ -40,7 +40,8 @@ function App() {
 
   return (
     <div className="App">
-      <div className="col-8 m-4">
+      <div className="col-10 col-sm-8
+       m-4">
         <h2>User Posts List</h2>
         
         <form onSubmit={handleSubmit}>
@@ -49,7 +50,7 @@ function App() {
           <input 
             type="number" 
             min="1"
-            className="col-1 ps-3 input"  
+            className="col-2 col-sm-1 ps-3 input"  
             value={userNum}
             onChange={(e) => setUserNum(e.target.value)}
           />
@@ -59,7 +60,7 @@ function App() {
         
         <div className="mt-2">
          {userPost.map(function (data, idx) {
-            
+          
            let postNumber = (idx+1)
            return (
             

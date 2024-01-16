@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
+import './UserComments.css'
 
 function UserComments({ id, fetchComments }) {
-
   const [userCommAll, setUserCommAll] = useState([]);
+
 
 
   // function to fetch the user Comments data
@@ -20,9 +21,10 @@ function UserComments({ id, fetchComments }) {
     setUserCommAll(dataComm);
   }
 
+  
 
   useEffect(() => {
-    if (fetchComments == true) {
+    if (fetchComments === true) {
       getComm(id);
     }
   }, [fetchComments]);
@@ -31,16 +33,23 @@ function UserComments({ id, fetchComments }) {
   return (
     <div>
       {userCommAll.map((comment) => {
-        
         return (
-          <div key={comment.id}>
-            <label>Name: {comment.name}</label>
-            <br></br>
-            <label>Email: {comment.email}</label>
-            <br></br>
-            <label>Comment: {comment.body}</label>
-            <p>-----------------------------------------------------------</p>
+          <div className="container" key={comment.id}>
+              <div className="col-8 badge text-wrap commName">
+                <label className="pt-1">Name:</label>
+                <p className="fw-light pt-1">{comment.name}</p>
+              </div>
+              <div className="col-8 badge text-wrap commName">
+                <label className="">Email:</label>
+                <p className="fw-light pt-1">{comment.email}</p>
+              </div>
+              <div className="col-8 badge text-wrap commName">
+                <label className="">Comment:</label>
+                <p className="fw-light pt-1">{comment.body}</p>
+              </div>
+              <p>-----------------------------------------------------------</p>
           </div>
+        
         );
       })}
     </div>
