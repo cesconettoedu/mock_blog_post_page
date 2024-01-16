@@ -2,3 +2,7 @@
 .App {
   text-align: -webkit-center;
 }
+
+.input {
+  min-width: 70px;
+}

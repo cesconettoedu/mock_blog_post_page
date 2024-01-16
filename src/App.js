@@ -40,20 +40,19 @@ function App() {
 
   return (
     <div className="App">
-      <div className="col-10 col-sm-8
-       m-4">
+      <div className="col-10 col-sm-8 m-4">
         <h2>User Posts List</h2>
         
         <form onSubmit={handleSubmit}>
           <label >Enter user number :</label>
           <div className="m-3">
-          <input 
-            type="number" 
-            min="1"
-            className="col-2 col-sm-1 ps-3 input"  
-            value={userNum}
-            onChange={(e) => setUserNum(e.target.value)}
-          />
+            <input 
+              type="number" 
+              min="1"
+              className="col-2 col-sm-1 ps-3 input"  
+              value={userNum}
+              onChange={(e) => setUserNum(e.target.value)}
+            />
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
