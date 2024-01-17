@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import './UserComments.css'
+import "./UserComments.css";
 
 function UserComments({ id, fetchComments }) {
   const [userCommAll, setUserCommAll] = useState([]);
-
-  
 
   // function to fetch the user Comments data
   async function getComm() {
@@ -21,34 +19,29 @@ function UserComments({ id, fetchComments }) {
     setUserCommAll(dataComm);
   }
 
-  
-
-  useEffect(() => { 
+  useEffect(() => {
     if (fetchComments === true) {
       getComm();
     }
   }, [fetchComments]);
 
-
   return (
     <div>
       {userCommAll.map((comment) => {
         return (
-         
           <div className="container " key={comment.id}>
-              <div className="col-8 badge text-wrap commName text-start">
-                <label className="pt-1">Name:</label>
-                <p className="fw-light pt-1">{comment.name}</p>
-             
-                <label className="">Email:</label>
-                <p className="fw-light pt-1">{comment.email}</p>
-              
-                <label className="">Comment:</label>
-                <p className="fw-light pt-1">{comment.body}</p>
-              </div>
-              <p>-----------------------------------------------------------</p>
-          </div>
+            <div className="col-8 badge text-wrap commName text-start">
+              <label className="pt-1">Name:</label>
+              <p className="fw-light pt-1">{comment.name}</p>
 
+              <label className="">Email:</label>
+              <p className="fw-light pt-1">{comment.email}</p>
+
+              <label className="">Comment:</label>
+              <p className="fw-light pt-1">{comment.body}</p>
+            </div>
+            <p>-----------------------------------------------------------</p>
+          </div>
         );
       })}
     </div>
